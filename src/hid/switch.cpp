@@ -32,10 +32,10 @@ void Switch::Init(dsy_gpio_pin pin, float update_rate)
 
 void Switch::Debounce()
 {
-    // update no faster than 1kHz
-    uint32_t now = System::GetNow();
+    uint32_t now = System::GetUs();
     updated_     = false;
 
+    // This is faster than daisy seed recommended
     if(now - last_update_ >= 1)
     {
         last_update_ = now;
