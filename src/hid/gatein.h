@@ -41,6 +41,8 @@ class GateIn
     */
     bool Trig();
 
+    bool TrigWithDebounce();
+
     /** State
     Checks current state of gate input (no state required)
 
@@ -55,6 +57,7 @@ class GateIn
     dsy_gpio pin_;
     uint8_t  prev_state_, state_;
     bool     invert_;
+    uint32_t last_update_;
 };
 } // namespace daisy
 #endif
