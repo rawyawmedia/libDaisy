@@ -35,8 +35,8 @@ void Switch::Debounce()
     uint32_t now = System::GetUs();
     updated_     = false;
 
-    // This is faster than daisy seed recommended
-    if(now - last_update_ >= 1)
+    // This is slower than daisy seed recommended
+    if (now - last_update_ >= 5000)
     {
         last_update_ = now;
         updated_     = true;

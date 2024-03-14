@@ -28,8 +28,8 @@ bool GateIn::TrigWithDebounce()
 {
     uint32_t now = System::GetUs();
 
-    // This is faster than daisy seed recommended
-    if(now - last_update_ >= 1)
+    // This is slower than daisy seed recommended
+    if(now - last_update_ >= 5000)
     {
         last_update_ = now;
 
